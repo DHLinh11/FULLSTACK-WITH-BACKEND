@@ -1,7 +1,28 @@
 {
-  "devDependencies": {
-    "@eslint/js": "^10.0.1",
-    "eslint": "^10.4.0",
-    "globals": "^17.6.0"
-  }
+	"name": "hello-world",
+	"version": "1.0.0",
+	"description": "DHL learn nodeJS ",
+	"keywords": [
+		"nodeJS",
+		"react"
+	],
+	"homepage": "https://github.com/DHLinh11/FULLSTACK-WITH-BACKEND#readme",
+	"bugs": {
+		"url": "https://github.com/DHLinh11/FULLSTACK-WITH-BACKEND/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/DHLinh11/FULLSTACK-WITH-BACKEND.git"
+	},
+	"license": "ISC",
+	"author": "DHL",
+	"type": "commonjs",
+	"main": "sever.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "node sever.js"
+	},
+	"dependencies": {
+		"express": "^5.2.1"
+	}
 }
