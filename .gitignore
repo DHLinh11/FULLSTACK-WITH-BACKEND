@@ -23,6 +23,6 @@ Thumbs.db
 .idea/
 
 # devDependencies
-eslint.config.mjs/
-package-lock.json/
-package.json/
+eslint.config.mjs
+package-lock.json
+package.json
