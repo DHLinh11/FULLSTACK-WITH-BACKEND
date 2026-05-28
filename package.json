@@ -17,19 +17,17 @@
 	"license": "ISC",
 	"author": "DHL",
 	"type": "commonjs",
-	"main": "src/index.js",
+	"main": "sever.js",
 	"scripts": {
-		"start": "nodemon -L --inspect src/index.js",
-		"watch": "sass src/resources/scss:src/public/css --watch --poll",
+		"dev": "nodemon -L src/sever.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"dependencies": {
-		"express": "^5.2.1",
-		"express-handlebars": "^9.0.1"
+		"dotenv": "^17.4.2",
+		"ejs": "^6.0.1",
+		"express": "^5.2.1"
 	},
 	"devDependencies": {
-		"morgan": "^1.10.1",
-		"nodemon": "^3.1.14",
-		"sass": "^1.100.0"
+		"nodemon": "^3.1.14"
 	}
 }
