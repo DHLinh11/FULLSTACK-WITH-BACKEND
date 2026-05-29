@@ -1,6 +1,7 @@
+require('dotenv').config();
 const express = require('express'); //commonJS
 const path = require('path'); //commonJS
-require('dotenv').config();
+const configViewEngine = require('./config/viewEngine');
 
 const app = express(); //app express
 
@@ -8,11 +9,7 @@ const port = process.env.PORT || 8088; //port
 const hostname = process.env.HOST_NAME;
 
 // config template engine
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
-
-// config static file
-app.use(express.static(path.join(__dirname, 'public')));
+configViewEngine(app);
 
 // khai báo route
 app.get('/', (req, res) => {
