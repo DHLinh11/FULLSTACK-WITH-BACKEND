@@ -3,13 +3,7 @@ const connection = require('../config/database');
 const getHomePage = (req, res) => {
 	// process data
 	//call model
-	let users = [];
-	connection.query('select * from Users u', function (err, results, fields) {
-		users = results;
-		console.log('>>>Check Results ', results);
-		console.log('>>>check user ', users);
-		res.send(JSON.stringify(users));
-	});
+	return res.render('home.ejs');
 };
 
 const getDhl = (req, res) => {
