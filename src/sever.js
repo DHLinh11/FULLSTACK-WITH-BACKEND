@@ -19,7 +19,6 @@ app.use('/', webRoutes);
 // simple query
 connection.query('select * from Users u', function (err, results, fields) {
 	console.log(results);
-	console.log(fields);
 });
 
 app.listen(port, hostname, () => {
