@@ -12,7 +12,16 @@ const getTest = (req, res) => {
 	res.send('Test Hello World!');
 };
 const postCreateUser = (req, res) => {
-	console.log('>>> req.body: ', req.body);
-	res.send(req.body);
+	let { email, name, city } = req.body;
+	console.log(`email =  ${email}, name = ${name}, city = ${city} `);
+
+	connection.query(
+		`INSERT INTO Users (email, name, city) 
+		VALUES (?, ?, ?)`,
+		[email, name, city],
+		function (err, results) {
+			res.send(`Create user succeed !`);
+		},
+	);
 };
 module.exports = { getHomePage, getDhl, getTest, postCreateUser };
