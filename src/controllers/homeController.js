@@ -11,17 +11,19 @@ const getDhl = (req, res) => {
 const getTest = (req, res) => {
 	res.send('Test Hello World!');
 };
-const postCreateUser = (req, res) => {
+const postCreateUser = async (req, res) => {
 	let { email, name, city } = req.body;
-	console.log(`email =  ${email}, name = ${name}, city = ${city} `);
 
-	connection.query(
-		`INSERT INTO Users (email, name, city) 
-		VALUES (?, ?, ?)`,
-		[email, name, city],
-		function (err, results) {
-			res.send(`Create user succeed !`);
-		},
-	);
+	let [results, fields] = await connection.query('INSERT INTO Users (email, name, city) VALUES (?, ?, ?)', [
+		email,
+		name,
+		city,
+	]);
+
+	console.log('>>>Check Results: ', results);
+	res.send('Create Users succeed !');
 };
-module.exports = { getHomePage, getDhl, getTest, postCreateUser };
+const createUserPage = (req, res) => {
+	res.render('create.ejs');
+};
+module.exports = { getHomePage, getDhl, getTest, postCreateUser, createUserPage };

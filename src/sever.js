@@ -21,9 +21,10 @@ app.use(express.urlencoded({ extended: true })); // for form data
 app.use('/', webRoutes);
 
 // simple query
-connection.query('select * from Users u', function (err, results, fields) {
-	console.log(results);
-});
+// async (results, fields) => {
+// 	await connection.query('select * from Users u');
+// 	console.log(results);
+// };
 
 app.listen(port, hostname, () => {
 	console.log(`Example app listening on port http://localhost:${port}`);
