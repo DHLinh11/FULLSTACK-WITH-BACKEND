@@ -29,6 +29,9 @@ const createUserPage = (req, res) => {
 	res.render('create.ejs');
 };
 const getUpdatePage = (req, res) => {
+	const userId = req.params.id;
+	console.log('>>Check req.params:', req.params, userId);
+
 	res.render('edit.ejs');
 };
 module.exports = { getHomePage, getDhl, getTest, postCreateUser, createUserPage, getUpdatePage };
